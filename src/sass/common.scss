@@ -1,0 +1,224 @@
+body {
+  font: 400 18px/1.6 $fontHelvetica;
+  color: $colorText;
+}
+
+html {
+  font-size: .7810vw;
+}
+
+.container {
+  width: 100%;
+  max-width: 1430px;
+  padding: 0 5px;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 14px 30px;
+  border-radius: 10px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn_white {
+  background: #fff;
+  border: 1px solid #d2d2d2;
+  color: #000000;
+  font-size: 16px;
+  transition: background $time, color $time, border $time;
+  &:hover {
+    background: #d973a5;
+    color: #fff;
+    border: 1px solid transparent;
+  }
+}
+
+.btn_red {
+  background: linear-gradient(45deg, #d973a5 50%, #b166c1 100%);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  transition: background $time, box-shadow $time;
+  &:hover {
+    background: linear-gradient(45deg, #d973a5 100%, #b166c1 100%);
+    box-shadow: 0 0 10px #d973a5;
+  }
+}
+
+.btn_slider {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-image: linear-gradient(to top, #e08479 0%, #ae68c1 100%);
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+.blog_btn {
+  z-index: 3;
+  background-color: rgba(0,0,0,.7);
+  height: 80px;
+  width: 100%;
+  max-width: 244px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.jay_form {
+  display: flex;
+  input {
+    flex: 1 1 70%;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px solid #e3e3e3;
+    margin-right: 10px;
+    padding: 27px 30px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    &::placeholder {
+      color: #cccccc;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px;
+    }
+  }
+}
+
+.send {
+  display: flex;
+  input {
+    flex: 1 1 70%;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px solid #e3e3e3;
+    margin-right: 10px;
+    padding: 27px 30px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    &::placeholder {
+      color: #cccccc;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px;
+    }
+  }
+  button {
+    flex: 1 1 30%;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+    text-transform: uppercase;
+  }
+}
+
+.btn_check {
+  width: 100%;
+  height: 70px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 22px;
+  border: 1px solid #d5d5d5;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: background $time, color $time;
+  &:hover {
+    background: linear-gradient(45deg, #d973a5 50%, #b166c1 100%);
+    color: #fff;
+  }
+  &.active {
+    background: linear-gradient(45deg, #d973a5 50%, #b166c1 100%);
+    color: #fff;
+  }
+}
+
+
+.b_f_box {
+  display: flex;
+  justify-content: space-between;
+
+  .elem {
+    position: relative;
+    flex: 1 1 30%;
+    margin-right: 23px;
+    min-height: 433px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 7px rgba(192, 192, 192, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 30px;
+    &.blog_carusel {
+      &:before {
+        opacity: 1;
+      }
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,.5);
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      opacity: 0;
+    }
+    p {
+      z-index: 3;
+      text-transform: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 30px;
+      max-height: 60px;
+      overflow: hidden;
+      margin-top: -90px;
+    }
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    &:nth-child(3n + 3) {
+      margin-right: 0;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      transition: transform $time;
+    }
+  }
+}

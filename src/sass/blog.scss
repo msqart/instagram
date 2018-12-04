@@ -1,0 +1,212 @@
+.blog_first {
+  position: relative;
+  padding: 88px 0 280px 0;
+  z-index: 1;
+  overflow: hidden;
+
+  .container {
+    position: relative;
+    max-width: 1170px;
+    z-index: 3;
+
+    .title {
+      color: #ffffff;
+      font-size: 45px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+
+  .b_f_bg {
+    position: absolute;
+    top: -50px;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+
+}
+
+.kind {
+  padding: 0 0 100px 0;
+  z-index: 3;
+  position: relative;
+  display: flex;
+  align-items: center;
+  .container {
+    max-width: 1170px;
+    position: relative;
+  }
+
+  .b_f_send {
+    margin-top: -200px;
+    width: 100%;
+    box-shadow: 0 3px 7px rgba(192, 192, 192, 0.35);
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 30px 30px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1140px;
+    .send {
+      width: 100%;
+    }
+
+    .b_f_s_info {
+      width: 100%;
+      max-width: 750px;
+      margin-bottom: 37px;
+      text-align: center;
+      .title {
+        color: #252525;
+        font-size: 26px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin: 20px auto;
+      }
+      p {
+        text-align: center;
+        color: #747474;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px;
+        margin-bottom: 10px;
+      }
+      b {
+        font-weight: 700;
+        font-size: 20px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        display: block;
+      }
+      a {
+        color: #8461d3;
+        text-transform: uppercase;
+        text-decoration: underline;
+        font-weight: 500;
+      }
+      .btn {
+        margin-top: 30px;
+        color: #fff;
+        min-width: 308px;
+      }
+    }
+  }
+
+  .b_f_k_box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 110px;
+    .elem {
+      flex: 1 1 30%;
+      margin-right: 23px;
+      max-width: 375px;
+      margin-bottom: 40px;
+
+      p {
+        color: #252525;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 30px;
+        text-transform: uppercase;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .btn_k {
+        width: 140px;
+        height: 54px;
+        box-shadow: 0 3px 7px rgba(192, 192, 192, 0.35);
+        border-radius: 10px;
+        background: #db7397;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+
+      .beauty {
+        background: #db7397;
+      }
+
+      .sport {
+        background: #8461d3;
+      }
+
+      .food {
+        background: #84a14f;
+      }
+
+      .img_elem {
+        position: relative;
+        width: 100%;
+        max-width: 375px;
+        height: 283px;
+        box-shadow: 0 3px 7px rgba(192, 192, 192, 0.35);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .pagination {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+    a {
+      margin-right: 40px;
+      background: #fff;
+      border-radius: 50%;
+      width: 43px;
+      height: 43px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid transparent;
+      transition: border $time;
+      &.active {
+        border: 2px solid #ba6abc;
+      }
+      &:hover {
+        border: 2px solid #ba6abc;
+      }
+      p {
+        color: #5f5f5f;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
