@@ -87,6 +87,26 @@ gulp.task('fileinclude', function () {
         .pipe(gulp.dest('./'));
 });
 
+gulp.task('fileincludeSpain', function () {
+    gulp.src('./src/html/spain/*.html')
+        .pipe(fileinclude({
+            filters: {
+                markdown: markdown.parse
+            }
+        }))
+        .pipe(gulp.dest('./sp/'));
+});
+
+gulp.task('fileincludeFrance', function () {
+    gulp.src('./src/html/france/*.html')
+        .pipe(fileinclude({
+            filters: {
+                markdown: markdown.parse
+            }
+        }))
+        .pipe(gulp.dest('./fr/'));
+});
+
 
 
 gulp.task('browser-sync', () => {
@@ -106,6 +126,8 @@ gulp.task('default', ['scripts', 'sass', 'browser-sync'], () => {
     gulp.watch('./src/sass/*.scss', ['sass']).on('change', browserSync.reload);
     gulp.watch('./src/js/**', ['scripts']).on('change', browserSync.reload);
     gulp.watch('./src/html/**', ['fileinclude']).on('change', browserSync.reload);
+    gulp.watch('./src/html/spain/**', ['fileincludeSpain']).on('change', browserSync.reload);
+    gulp.watch('./src/html/france/**', ['fileincludeFrance']).on('change', browserSync.reload);
 });
 
 gulp.task('host', ['scripts', 'sass'], () => {

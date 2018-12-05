@@ -8,6 +8,7 @@ const btnSignUp = document.querySelectorAll('.sign_up');
 const btnRecovery = document.querySelectorAll('.recovery');
 const btnNo = document.querySelector('.btn_no');
 const burgerBtn = document.querySelector('.burger_menu');
+const burgerBtnMobile = document.querySelector('.burger_menu_mobile');
 const btnArr = document.querySelectorAll('.btn');
 
 
@@ -40,14 +41,38 @@ function clsNav(elem, block) {
 }
 
 
+window.onscroll = function() {
+    let scrolled = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrolled > 0) {
+        header.classList.add('scroll');
+    } else {
+        header.classList.remove('scroll');
+    }
+};
+
 if (closeNav !== null) {
     clsNav(closeNav, navBlock);
 }
-
+const section = document.querySelectorAll('section');
 burgerBtn.addEventListener('click', (even) => {
     even.preventDefault();
-    navBlock.classList.add('active');
+    navBlock.classList.toggle('active');
+    burgerBtn.classList.toggle('active');
+    blur();
 });
+
+burgerBtnMobile.addEventListener('click', (even) => {
+    even.preventDefault();
+    navBlock.classList.toggle('active');
+    burgerBtnMobile.classList.toggle('active');
+    blur();
+});
+
+function blur() {
+    for (let i = 0; i < section.length; i++) {
+        section[i].classList.toggle('blur');
+    }
+}
 
 if (btnNo !== null) {
     btnNo.addEventListener('click', (even) => {
@@ -76,9 +101,9 @@ if (btnNo !== null) {
 
 check(btnCheck);
 
-if (!(/how.html/.test(window.location.href)) && !(/blog.html/.test(window.location.href))) {
+/*if (!(/how.html/.test(window.location.href)) && !(/blog.html/.test(window.location.href))) {
     popupEnter.classList.add('p_active');
-}
+}*/
 
 function check(elem) {
     for (let i = 0; i < elem.length; i++) {
@@ -201,7 +226,8 @@ if (blogSlider !== null) {
     glide.mount();
 }
 
-
+/* Скрывать шапку */
+/*
 setInterval(headerRemove, 500);
 
 function headerRemove() {
@@ -212,6 +238,7 @@ function headerRemove() {
         header.classList.remove('no_active');
     }
 }
+*/
 
 
 
