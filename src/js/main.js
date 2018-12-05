@@ -8,6 +8,7 @@ const btnSignUp = document.querySelectorAll('.sign_up');
 const btnRecovery = document.querySelectorAll('.recovery');
 const btnNo = document.querySelector('.btn_no');
 const burgerBtn = document.querySelector('.burger_menu');
+const btnArr = document.querySelectorAll('.btn');
 
 
 const btnCheck = document.querySelectorAll('.btn_check');
@@ -51,24 +52,24 @@ burgerBtn.addEventListener('click', (even) => {
 if (btnNo !== null) {
     btnNo.addEventListener('click', (even) => {
         even.preventDefault();
-        popupBfirst.classList.add('active');
+        popupBfirst.classList.add('p_active');
     });
 
     closeBf.addEventListener('click', (even) => {
         even.preventDefault();
-        popupBfirst.classList.remove('active');
-        popupBsecond.classList.add('active');
+        popupBfirst.classList.remove('p_active');
+        popupBsecond.classList.add('p_active');
     });
 
     closeBs.addEventListener('click', (even) => {
         even.preventDefault();
-        popupBsecond.classList.remove('active');
-        popupBthird.classList.add('active');
+        popupBsecond.classList.remove('p_active');
+        popupBthird.classList.add('p_active');
     });
 
     closeBt.addEventListener('click', (even) => {
         even.preventDefault();
-        popupBthird.classList.remove('active');
+        popupBthird.classList.remove('p_active');
     });
 }
 
@@ -76,7 +77,7 @@ if (btnNo !== null) {
 check(btnCheck);
 
 if (!(/how.html/.test(window.location.href)) && !(/blog.html/.test(window.location.href))) {
-    popupEnter.classList.add('active');
+    popupEnter.classList.add('p_active');
 }
 
 function check(elem) {
@@ -96,9 +97,9 @@ for (let i = 0; i < btnLogIn.length; i++) {
     btnLogIn[i].addEventListener('click', (even) => {
         even.preventDefault();
         for (let i = 0; i < popup.lenght; i++) {
-            popup[i].classList.remove('active');
+            popup[i].classList.remove('p_active');
         }
-        popupLogin.classList.toggle('active');
+        popupLogin.classList.toggle('p_active');
     });
 }
 
@@ -106,9 +107,9 @@ for (let i = 0; i < btnSignUp.length; i++) {
     btnSignUp[i].addEventListener('click', (even) => {
         even.preventDefault();
         for (let i = 0; i < popup.lenght; i++) {
-            popup[i].classList.remove('active');
+            popup[i].classList.remove('p_active');
         }
-        popupSignUp.classList.toggle('active');
+        popupSignUp.classList.toggle('p_active');
     });
 }
 
@@ -116,9 +117,9 @@ for (let i = 0; i < btnRecovery.length; i++) {
     btnRecovery[i].addEventListener('click', (even) => {
         even.preventDefault();
         for (let i = 0; i < popup.lenght; i++) {
-            popup[i].classList.remove('active');
+            popup[i].classList.remove('p_active');
         }
-        popupRecovery.classList.toggle('active');
+        popupRecovery.classList.toggle('p_active');
     });
 }
 
@@ -126,10 +127,10 @@ for (let i = 0; i < btnRecovery.length; i++) {
 for (let i = 0; i < closePopup.length; i++) {
     closePopup[i].addEventListener('click', (even) => {
         even.preventDefault();
-        popupLogin.classList.remove('active');
-        popupSignUp.classList.remove('active');
-        popupRecovery.classList.remove('active');
-        popupEnter.classList.remove('active');
+        popupLogin.classList.remove('p_active');
+        popupSignUp.classList.remove('p_active');
+        popupRecovery.classList.remove('p_active');
+        popupEnter.classList.remove('p_active');
     });
 }
 
@@ -199,3 +200,18 @@ if (blogSlider !== null) {
     });
     glide.mount();
 }
+
+
+setInterval(headerRemove, 500);
+
+function headerRemove() {
+    const popActive = document.querySelectorAll('.p_active');
+    if (popActive.length !== 0) {
+        header.classList.add('no_active');
+    } else {
+        header.classList.remove('no_active');
+    }
+}
+
+
+

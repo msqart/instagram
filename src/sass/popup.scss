@@ -13,7 +13,7 @@
   visibility: hidden;
   transition: top $time, opacity $time, visibility $time;
 
-  &.active {
+  &.p_active {
     top: 0;
     opacity: 1;
     visibility: visible;
@@ -127,7 +127,7 @@
   visibility: hidden;
   transition: opacity $time, visibility $time;
 
-  &.active {
+  &.p_active {
     opacity: 1;
     visibility: visible;
   }
