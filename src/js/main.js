@@ -32,6 +32,26 @@ const closeBs = document.querySelector('.cls_s');
 const closeBt = document.querySelector('.cls_t');
 const closeNav = document.querySelector('.cls_nav');
 
+
+(function () {
+    let screenWidth = document.body.clientWidth;
+    if (screenWidth > 768 && (!(/how.html/.test(window.location.href)) && !(/blog.html/.test(window.location.href)))) {
+        popupEnter.classList.add('p_active');
+    } else {
+        popupEnter.classList.remove('p_active');
+    }
+    console.log(screenWidth);
+})();
+window.addEventListener('resize', (even) => {
+    let screenWidth = document.body.clientWidth;
+    if (screenWidth > 768 && (!(/how.html/.test(window.location.href)) && !(/blog.html/.test(window.location.href)))) {
+        popupEnter.classList.add('p_active');
+    } else {
+        popupEnter.classList.remove('p_active');
+    }
+    console.log(screenWidth);
+});
+
 function clsNav(elem, block) {
     elem.addEventListener('click', (even) => {
         even.preventDefault();
@@ -100,29 +120,7 @@ if (btnNo !== null) {
 
 
 check(btnCheck);
-(function () {
-    let screenWidth = document.body.clientWidth;
-    if (screenWidth > 768 && (!(/how.html/.test(window.location.href)) && !(/blog.html/.test(window.location.href)))) {
-        popupEnter.classList.add('p_active');
-    } else {
-        popupEnter.classList.remove('p_active');
-    }
-    console.log(screenWidth);
-})();
-window.addEventListener('resize', (even) => {
-    let screenWidth = document.body.clientWidth;
-    if (screenWidth > 768 && (!(/how.html/.test(window.location.href)) && !(/blog.html/.test(window.location.href)))) {
-        popupEnter.classList.add('p_active');
-    } else {
-        popupEnter.classList.remove('p_active');
-    }
-    console.log(screenWidth);
-});
 
-
-if (!(/how.html/.test(window.location.href)) && !(/blog.html/.test(window.location.href))) {
-    popupEnter.classList.add('p_active');
-}
 
 function check(elem) {
     for (let i = 0; i < elem.length; i++) {
