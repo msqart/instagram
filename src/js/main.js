@@ -74,19 +74,23 @@ if (closeNav !== null) {
     clsNav(closeNav, navBlock);
 }
 const section = document.querySelectorAll('section');
-burgerBtn.addEventListener('click', (even) => {
-    even.preventDefault();
-    navBlock.classList.toggle('active');
-    burgerBtn.classList.toggle('active');
-    blur();
-});
 
-burgerBtnMobile.addEventListener('click', (even) => {
-    even.preventDefault();
-    navBlock.classList.toggle('active');
-    burgerBtnMobile.classList.toggle('active');
-    blur();
-});
+if (burgerBtn !== null) {
+    burgerBtn.addEventListener('click', (even) => {
+        even.preventDefault();
+        navBlock.classList.toggle('active');
+        burgerBtn.classList.toggle('active');
+        blur();
+    });
+
+    burgerBtnMobile.addEventListener('click', (even) => {
+        even.preventDefault();
+        navBlock.classList.toggle('active');
+        burgerBtnMobile.classList.toggle('active');
+        blur();
+    });
+}
+
 
 function blur() {
     for (let i = 0; i < section.length; i++) {
